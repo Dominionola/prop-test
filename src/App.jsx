@@ -21,9 +21,9 @@ export default function App(props) {
   console.log(props);
   return (
     <>
-      <h2>
-        {props.setup} {props.punchline}
-      </h2>
+       <p>Setup: {props.setup}</p>
+      <p>Punchline: {props.punchline}</p>
+      <hr />
     </>
   );
 }
