@@ -1,9 +1,23 @@
+import { useState } from "react";
+
 export default function Joke(props) {
-    return (
-        <>
-            {props.setup && <p className="setup">Setup: {props.setup}</p>}
-            <p className="punchline">Punchline: {props.punchline}</p>
-            <hr />
-        </>
-    )
+  const [isShown, setIsShown] = useState(false);
+
+  function toggleShown() {
+    setIsShown((prevShown) => !prevShown);
+  }
+
+  console.log(isShown);
+  return (
+    <>
+      {props.setup && <p> {props.setup}</p>}
+      {isShown && <p>{props.punchline}</p>}
+      <button onClick={toggleShown}>Show</button>
+      <hr />
+    </>
+  );
+}
+
+if (false && console.log("Everthing  was true!")) {
+  // console.log("Everthing  was true!")
 }
